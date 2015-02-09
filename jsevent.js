@@ -4,13 +4,16 @@ function changer (id, newValue) {
 	element.innerHTML = newValue;
 }
 
-function modifyText() {
+function modifyColor() {
 	var form = document.getElementById("formulario")
-	var text = document.getElementById("texto")
-	text.innerHTML = form.value
+	var element = document.getElementById("caja")
+	var aux = 'background-color:#' + form.value
+	element.attributes[0].nodeValue = aux
+	console.log(aux)
+	console.log(element.attributes[0].nodeValue)
 }
 
 // add event listener to table
 var el = document.getElementById("formulario");
-el.addEventListener("input", modifyText)
+el.addEventListener("input", modifyColor)
 
